@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Placement reticle: thin ring with ticks and a centre dot. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="48dp" android:height="48dp" android:viewportWidth="48" android:viewportHeight="48">
+    <path android:fillColor="#00000000" android:strokeColor="#80000000" android:strokeWidth="3.5" android:pathData="M24,10a14,14 0 1,1 0,28a14,14 0 1,1 0,-28" />
+    <path android:fillColor="#00000000" android:strokeColor="#F2FFFFFF" android:strokeWidth="1.6" android:pathData="M24,10a14,14 0 1,1 0,28a14,14 0 1,1 0,-28M24,4v5M24,39v5M4,24h5M39,24h5" />
+    <path android:fillColor="@color/accent" android:pathData="M24,24m-2.5,0a2.5,2.5 0 1,0 5,0a2.5,2.5 0 1,0 -5,0" />
+</vector>

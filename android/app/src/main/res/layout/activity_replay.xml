@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <android.opengl.GLSurfaceView
+        android:id="@+id/surface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Top left: back + scan name -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_margin="12dp"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btnExit"
+            style="@style/GlassIconButton"
+            android:contentDescription="Back to library"
+            app:icon="@drawable/ic_arrow_back" />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/GlassPillText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:maxWidth="260dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <!-- Right: what to show -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginEnd="12dp"
+        android:orientation="vertical">
+
+        <Button android:id="@+id/btnFootage" style="@style/ToggleChip" android:text="Footage" app:icon="@drawable/ic_footage" />
+        <Button android:id="@+id/btnObject" style="@style/ToggleChip" android:text="Object" app:icon="@drawable/ic_cube" />
+        <Button android:id="@+id/btnPoints" style="@style/ToggleChip" android:text="Points" app:icon="@drawable/ic_points" />
+        <Button android:id="@+id/btnFloor" style="@style/ToggleChip" android:text="Floor" app:icon="@drawable/ic_grid" />
+    </LinearLayout>
+
+    <!-- Bottom: transport -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="12dp"
+        android:background="@drawable/bg_glass_bar"
+        android:gravity="center_vertical"
+        android:paddingStart="6dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="6dp"
+        android:paddingBottom="6dp">
+
+        <Button
+            android:id="@+id/btnPlay"
+            style="@style/GlassIconButton"
+            android:contentDescription="Play / pause"
+            app:backgroundTint="@color/accent"
+            app:icon="@drawable/ic_pause"
+            app:iconTint="@color/on_accent"
+            app:strokeWidth="0dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Tracking quality per frame + trim range -->
+            <com.pockettrack.app.replay.QualityStripView
+                android:id="@+id/qualityStrip"
+                android:layout_width="match_parent"
+                android:layout_height="6dp" />
+
+            <SeekBar
+                android:id="@+id/seek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:progressBackgroundTint="#55FFFFFF"
+                android:progressTint="@color/accent"
+                android:thumbTint="@color/accent" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/frameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:minWidth="140dp"
+            android:textAlignment="viewEnd"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btnTrim"
+            style="@style/GlassIconButton"
+            android:layout_marginStart="8dp"
+            android:contentDescription="Trim"
+            app:icon="@drawable/ic_trim" />
+    </LinearLayout>
+</FrameLayout>

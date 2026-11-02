@@ -1,0 +1,20 @@
+# Portable toolchain (tools/setup-android.ps1)
+.toolchain/
+
+# Build output
+dist/
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.kotlin/
+*.apk
+
+# Python / Blender
+__pycache__/
+*.pyc
+
+# IDEs
+.idea/
+.vscode/
+*.iml
